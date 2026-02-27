@@ -1,0 +1,13 @@
+import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+df = pd.read_csv(r"C:\Users\Jawad.A\Downloads\day32_relationships.csv")
+
+plt.figure(figsize=(10, 6))
+sns.scatterplot(data=df, x="feature1", y="outcome", hue="segment",style="priority" )
+plt.title("scatter plot - f1 vs outcome")
+plt.show()
+
+sns.relplot(data=df, x="feature1", y="outcome", hue="segment", col="priority")
+plt.show()

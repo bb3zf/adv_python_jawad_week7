@@ -1,0 +1,13 @@
+import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+df = pd.read_csv(r"C:\Users\Jawad.A\Downloads\day34_patterns.csv")
+
+A = sns.relplot(data=df, kind="scatter", x="time", y="value", col="season", hue="segment", alpha=0.4, height=3)
+A.fig.suptitle("Value vs Time", y=1.05)
+plt.show()
+
+sns.regplot(data=df, x="time", y="value", scatter_kws={"alpha": 0.3}, line_kws={"color": "red"})
+plt.title("Value vs Time - trend overlay")
+plt.show()

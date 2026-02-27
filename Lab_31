@@ -1,0 +1,28 @@
+import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+df = pd.read_csv(r"C:\Users\Jawad.A\Downloads\day31_seaborn.csv")
+
+plt.figure(figsize=(10,10))
+sns.histplot(df["age"], color="skyblue")
+plt.title("HistPlot")
+plt.xlabel("age") ; plt.ylabel("income")
+plt.show()
+
+plt.figure(figsize=(10,10))
+sns.kdeplot(x=df["age"], y=df["income"], fill=True, color="darkblue")
+plt.title("KDE Plot")
+plt.xlabel("age") ; plt.ylabel("income")
+plt.show()
+
+plt.figure(figsize=(10,10))
+sns.boxplot(y=df["income"], widths=0.6, color="purple")
+plt.title("Box Plot")
+plt.xlabel("age") ; plt.ylabel("income")
+plt.show()
+
+plt.figure(figsize=(10,10))
+sns.countplot(x=df["age"], color="tomato")
+plt.title("Count Plot")
+plt.show()

@@ -1,0 +1,13 @@
+import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+df = pd.read_csv(r"C:\Users\Jawad.A\Downloads\day33_corr.csv")
+
+corr = df.corr()
+print(corr)
+
+plt.figure(figsize=(10, 10))
+sns.heatmap(corr, annot=True, cmap="coolwarm", vmin=-1, vmax=1)
+plt.title("Correlation Heatmap")
+plt.show()
